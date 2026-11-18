@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block EVA3 %}Ejercicio 2{% endblock %}
+
+{% block contenido %}
+
+<div class="caja">
+
+    <h1>Ejercicio 2</h1>
+
+    <form method="post" action="{{ url_for('boton2') }}">
+        <label for="nombre1">Nombre 1</label>
+        <input type="text" id="nombre1" name="nombre1" required>
+
+        <label for="nombre2">Nombre 2</label>
+        <input type="text" id="nombre2" name="nombre2" required>
+
+        <label for="nombre3">Nombre 3</label>
+        <input type="text" id="nombre3" name="nombre3" required>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if nombre_mayor is not none %}
+    <p>El nombre con mayor cantidad de caracteres es: {{ nombre_mayor }}</p>
+    <p>El nombre tiene: {{ cantidad }} caracteres</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}
